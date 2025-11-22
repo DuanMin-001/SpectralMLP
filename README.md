@@ -3,19 +3,16 @@
 **Official PyTorch implementation** for the paper:
 > **SpectralMLP: A Lightweight and Interpretable Residual MLP for Efficient Soil Property Prediction with Vis–NIR Spectroscopy**
 
-
 ##  Overview
 **SpectralMLP** is a lightweight residual Multilayer Perceptron architecture designed to predict soil properties (pH, OC, N) using Visible–Near-Infrared (Vis–NIR) spectroscopy.
 
 Unlike complex Transformer models, SpectralMLP targets the **"optimal complexity sweet spot"**. It delivers high predictive accuracy statistically equivalent to Transformers but significantly reduces computational costs, making it ideal for deployment on portable agricultural devices.
-
 
 ##  Key Highlights
 - **High Efficiency:** **37.8% faster** training speed compared to Spectral Transformer.
 - **Lightweight:** **16.5% reduction** in parameter count.
 - **Robustness:** Proven stability across varying random seeds and soil heterogeneity.
 - **Interpretability:** Includes gradient-based saliency analysis consistent with soil chemical mechanisms.
-
 
 ##  Results Summary
 Performance comparison based on 5-Fold Cross-Validation (Time averaged over 3 independent runs):
@@ -26,7 +23,6 @@ Performance comparison based on 5-Fold Cross-Validation (Time averaged over 3 in
 | **SpectralMLP (Ours)** | **670,723** | **↓ 16.5%** | **0.947** | **4.378** | **51.44 (↓ 37.8%)** |
 
 > On the independent test set (20%), SpectralMLP achieved **Excellent** prediction levels (RPD > 4.0) for all targets.
-
 
 ##  Getting Started
 
@@ -51,7 +47,6 @@ The raw soil spectral data used in this study (LUCAS 2009) are publicly availabl
    python prepare_data.py
    ```
    *Output: `cleaned_soil_data.csv` will be generated.*
-
 
 
 ##  Usage Guide
@@ -93,7 +88,7 @@ python train_kfold_baselineVS.py
 
 Generate p-values for significance testing (paired t-test).
 
-> ** Important Pre-requisite:**
+> Important Pre-requisite:
 > Before running the analysis, you must **manually merge** the raw result files generated in Step 2 into a single CSV file.
 >
 > 1. Take `kfold_metrics_summary_raw.csv` from `results/train_kfold_mlpVStransV1/`.
@@ -123,14 +118,12 @@ python visualize_preprocessing.py
 python visualize_importance.py
 ```
 
-
 ##  Project Structure
 - `model.py`: Definitions for SpectralMLP and SpectralTransformerMLP.
 - `baselines.py`: Definitions for PLS, SVR, RF, and Simple1DCNN.
 - `data_utils.py`: Data loading, SNV/SG preprocessing, and augmentation logic.
 - `utils.py`: Metrics calculation, seed management, and plotting functions.
 - `results/`: All logs, plots, and CSV reports are saved here.
-
 
 ## License
 This project is licensed under the terms of the MIT License. See the LICENSE file for full details.
