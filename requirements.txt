@@ -1,0 +1,31 @@
+#Core Data Science & Math
+
+numpy==2.3.4
+pandas==2.3.3
+scipy==1.16.2
+scikit-learn==1.7.2
+mpmath==1.3.0
+
+#Visualization
+
+matplotlib==3.10.7
+seaborn==0.13.2
+
+#Deep Learning Framework (PyTorch)
+
+#Note: Developed using torch-2.10.0.dev20251022+cu128
+
+torch>=2.10.0
+torchvision>=0.25.0
+torchaudio>=2.10.0
+
+#Utilities & Tools
+
+tqdm==4.67.1
+openpyxl==3.1.5
+joblib==1.5.2
+tensorboard==2.20.0
+
+#Explainable AI
+
+shap==0.49.1
